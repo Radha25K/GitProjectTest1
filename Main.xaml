@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="604.666666666667,458" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="604.666666666667,1002" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="60">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -24,7 +24,16 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
-    </sco:Collection>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
@@ -52,15 +61,60 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GitProjectTest1" sap:VirtualizedContainerService.HintSize="376,302.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GitProjectTest1" sap:VirtualizedContainerService.HintSize="476,937.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="CurrentScore" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85.3333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Hi Welcome to GIT respository&quot;]" />
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85.3333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;1st push is done&quot;]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Hi Welcome to GIT respository&quot;]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,85.3333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;1st push is done&quot;]" />
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: IPL 2022 Live Cricket Score, Schedule, Latest News, Stats &amp; Videos | Cricbuzz.co" sap:VirtualizedContainerService.HintSize="434,594.666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="582e41b2-8c6f-40e4-a2ad-6c28cafab23c" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,376.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGetText DisplayName="Get Text 'Featured Matches'" sap:VirtualizedContainerService.HintSize="334,158" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="582e41b2-8c6f-40e4-a2ad-6c28cafab23c" Version="V1">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.cricbuzz.com/" DesignTimeRectangle="345, 541, 210, 25" ElementType="Text" FriendlyName="'223-7 (43.1)'" FullSelectorArgument="&lt;webctrl aaname='223-7 (43.1)' parentid='hm-scag-mtch-blk' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='hm-scag-mtch-blk' tag='DIV' type='' class='cb-ovr-flo' /&gt;" Guid="13e17e15-248e-409f-9114-d8d3d4f53385" InformativeScreenshot="a9ef229875f184df538b65d51c7951c6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='IPL 2022 Live Cricket Score, Schedule, Latest News, Stats &amp;amp; Videos | Cricbuzz.com' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="255, 482, 252, 36" ElementType="Text" FriendlyName="'Featured Matches'" FullSelectorArgument="&lt;webctrl parentid='match_menu_container' tag='H4' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='match_menu_container' tag='H4' type='' class='cb-mdl-hdr' aaname='Featured Matches' check:innerText='FEATURED MATCHES' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+              <uix:NGetText.Text>
+                <OutArgument x:TypeArguments="x:String">[CurrentScore]</OutArgument>
+              </uix:NGetText.Text>
+            </uix:NGetText>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85.3333333333333" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[CurrentScore]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 1942, 1030" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="3d769ea2787305d111bad3480f18956e.png" Selector="&lt;html app='chrome.exe' title='IPL 2022 Live Cricket Score, Schedule, Latest News, Stats &amp;amp; Videos | Cricbuzz.com' /&gt;" Url="https://www.cricbuzz.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>
